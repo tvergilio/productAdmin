@@ -1,0 +1,32 @@
+<div crud-breadcrumbs="{{ctrl.employee.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.employee.id">Create Employee</span>
+    <span ng-show="ctrl.employee.id">Edit Employee</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="First Name" invalid="form.firstName.$invalid">
+		<input name="firstName" type="text" class='form-control' ng-model="ctrl.employee.firstName" required  />
+	</div>
+	
+	<div field-container label="Last Name" invalid="form.lastName.$invalid">
+		<input name="lastName" type="text" class='form-control' ng-model="ctrl.employee.lastName" required  />
+	</div>
+	
+	<div field-container label="Birth Date" invalid="form.birthDate.$invalid">
+		<input name="birthDate" type="text" class='form-control' date-field ng-model="ctrl.employee.birthDate" required  />
+	</div>
+	
+	<div field-container label="Salary" invalid="form.salary.$invalid">
+		<input name="salary" type="text" class='form-control' ng-model="ctrl.employee.salary" required  />
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.employee" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.employee.id"><button crud-button="delete" item="ctrl.employee"></button></span>
+    </div>
+
+</form>
