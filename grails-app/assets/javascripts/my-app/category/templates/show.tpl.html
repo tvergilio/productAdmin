@@ -1,0 +1,15 @@
+<div crud-breadcrumbs="show"></div>
+<h2>Show Category</h2>
+<div flash-message ></div>
+
+<table class="table table-bordered table-striped">
+    <tr display-field label="Name" value="ctrl.category.name"></tr>
+    <tr display-field label="Description" value="ctrl.category.description"></tr>
+    <tr display-field label="Image" value="ctrl.category.image.toText"></tr>
+    <tr display-field label="Parent" value="ctrl.category.parent.toText"></tr>
+</table>
+
+<div class="form-actions">
+    <button crud-button="edit" item="ctrl.category"></button>
+    <button crud-button="delete" item="ctrl.category" ></button>
+</div>

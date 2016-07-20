@@ -1,0 +1,17 @@
+<div crud-breadcrumbs="show"></div>
+<h2>Show Product</h2>
+<div flash-message ></div>
+
+<table class="table table-bordered table-striped">
+    <tr display-field label="Name" value="ctrl.product.name"></tr>
+    <tr display-field label="Description" value="ctrl.product.description"></tr>
+    <tr display-field label="Long Description" value="ctrl.product.longDescription"></tr>
+    <tr display-field label="Regular Price" value="ctrl.product.regularPrice"></tr>
+    <tr display-field label="Sales Price" value="ctrl.product.salesPrice"></tr>
+    <tr display-field label="Shipping" value="ctrl.product.shipping.toText"></tr>
+</table>
+
+<div class="form-actions">
+    <button crud-button="edit" item="ctrl.product"></button>
+    <button crud-button="delete" item="ctrl.product" ></button>
+</div>

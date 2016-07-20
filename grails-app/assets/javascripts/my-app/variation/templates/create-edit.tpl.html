@@ -1,0 +1,36 @@
+<div crud-breadcrumbs="{{ctrl.variation.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.variation.id">Create Variation</span>
+    <span ng-show="ctrl.variation.id">Edit Variation</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Description" invalid="form.description.$invalid">
+		<input name="description" type="text" class='form-control' ng-model="ctrl.variation.description" required  />
+	</div>
+	
+	<div field-container label="Image" invalid="form.image.$invalid">
+		<select name="image" class="form-control" ng-model="ctrl.variation.image" required  ng-options="item.toText for item in ctrl.imageList track by item.id"  ></select>
+	</div>
+	
+	<div field-container label="Regular Price" invalid="form.regularPrice.$invalid">
+		<input name="regularPrice" type="text" class='form-control' ng-model="ctrl.variation.regularPrice" required  />
+	</div>
+	
+	<div field-container label="Sale Price" invalid="form.salePrice.$invalid">
+		<input name="salePrice" type="text" class='form-control' ng-model="ctrl.variation.salePrice" required  />
+	</div>
+	
+	<div field-container label="Shipping" invalid="form.shipping.$invalid">
+		<select name="shipping" class="form-control" ng-model="ctrl.variation.shipping" required  ng-options="item.toText for item in ctrl.shippingList track by item.id"  ></select>
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.variation" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.variation.id"><button crud-button="delete" item="ctrl.variation"></button></span>
+    </div>
+
+</form>

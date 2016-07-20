@@ -1,0 +1,16 @@
+<div crud-breadcrumbs="show"></div>
+<h2>Show Variation</h2>
+<div flash-message ></div>
+
+<table class="table table-bordered table-striped">
+    <tr display-field label="Description" value="ctrl.variation.description"></tr>
+    <tr display-field label="Image" value="ctrl.variation.image.toText"></tr>
+    <tr display-field label="Regular Price" value="ctrl.variation.regularPrice"></tr>
+    <tr display-field label="Sale Price" value="ctrl.variation.salePrice"></tr>
+    <tr display-field label="Shipping" value="ctrl.variation.shipping.toText"></tr>
+</table>
+
+<div class="form-actions">
+    <button crud-button="edit" item="ctrl.variation"></button>
+    <button crud-button="delete" item="ctrl.variation" ></button>
+</div>

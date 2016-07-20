@@ -1,0 +1,40 @@
+<div crud-breadcrumbs="{{ctrl.product.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.product.id">Create Product</span>
+    <span ng-show="ctrl.product.id">Edit Product</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Name" invalid="form.name.$invalid">
+		<input name="name" type="text" class='form-control' ng-model="ctrl.product.name" required  />
+	</div>
+	
+	<div field-container label="Description" invalid="form.description.$invalid">
+		<input name="description" type="text" class='form-control' ng-model="ctrl.product.description" required  />
+	</div>
+	
+	<div field-container label="Long Description" invalid="form.longDescription.$invalid">
+		<input name="longDescription" type="text" class='form-control' ng-model="ctrl.product.longDescription" required  />
+	</div>
+	
+	<div field-container label="Regular Price" invalid="form.regularPrice.$invalid">
+		<input name="regularPrice" type="text" class='form-control' ng-model="ctrl.product.regularPrice" required  />
+	</div>
+	
+	<div field-container label="Sales Price" invalid="form.salesPrice.$invalid">
+		<input name="salesPrice" type="text" class='form-control' ng-model="ctrl.product.salesPrice" required  />
+	</div>
+	
+	<div field-container label="Shipping" invalid="form.shipping.$invalid">
+		<select name="shipping" class="form-control" ng-model="ctrl.product.shipping" required  ng-options="item.name for item in ctrl.shippingList track by item.id"  ></select>
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.product" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.product.id"><button crud-button="delete" item="ctrl.product"></button></span>
+    </div>
+
+</form>

@@ -1,0 +1,20 @@
+<div crud-breadcrumbs="{{ctrl.feature.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.feature.id">Create Feature</span>
+    <span ng-show="ctrl.feature.id">Edit Feature</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Name" invalid="form.name.$invalid">
+		<input name="name" type="text" class='form-control' ng-model="ctrl.feature.name" required  />
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.feature" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.feature.id"><button crud-button="delete" item="ctrl.feature"></button></span>
+    </div>
+
+</form>

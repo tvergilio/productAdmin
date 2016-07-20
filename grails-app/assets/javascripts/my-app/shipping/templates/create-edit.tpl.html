@@ -1,0 +1,28 @@
+<div crud-breadcrumbs="{{ctrl.shipping.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.shipping.id">Create Shipping</span>
+    <span ng-show="ctrl.shipping.id">Edit Shipping</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Name" invalid="form.name.$invalid">
+		<input name="name" type="text" class='form-control' ng-model="ctrl.shipping.name" required  />
+	</div>
+	
+	<div field-container label="Enabled" invalid="form.enabled.$invalid">
+		<input name="enabled" type="text" class='form-control' ng-model="ctrl.shipping.enabled" required  />
+	</div>
+	
+	<div field-container label="Cost" invalid="form.cost.$invalid">
+		<input name="cost" type="text" class='form-control' ng-model="ctrl.shipping.cost" required  />
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.shipping" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.shipping.id"><button crud-button="delete" item="ctrl.shipping"></button></span>
+    </div>
+
+</form>

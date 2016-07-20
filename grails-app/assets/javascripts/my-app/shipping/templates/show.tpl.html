@@ -1,0 +1,14 @@
+<div crud-breadcrumbs="show"></div>
+<h2>Show Shipping</h2>
+<div flash-message ></div>
+
+<table class="table table-bordered table-striped">
+    <tr display-field label="Name" value="ctrl.shipping.name"></tr>
+    <tr display-field label="Enabled" value="ctrl.shipping.enabled"></tr>
+    <tr display-field label="Cost" value="ctrl.shipping.cost"></tr>
+</table>
+
+<div class="form-actions">
+    <button crud-button="edit" item="ctrl.shipping"></button>
+    <button crud-button="delete" item="ctrl.shipping" ></button>
+</div>

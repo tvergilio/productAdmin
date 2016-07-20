@@ -88,7 +88,7 @@
 36 verbose url raw karma-jasmine
 37 verbose url resolving [ 'https://registry.npmjs.org/', './karma-jasmine' ]
 38 verbose url resolved https://registry.npmjs.org/karma-jasmine
-39 info trying registry request attempt 1 at 16:34:21
+39 info trying registry request attempt 1 at 09:19:58
 40 http GET https://registry.npmjs.org/karma-jasmine
 41 error TypeError: Request path contains unescaped characters.
 41 error     at new ClientRequest (_http_client.js:73:11)
